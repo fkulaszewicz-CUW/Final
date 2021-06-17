@@ -1,31 +1,32 @@
 <div class="centered-box">
-    <div class="player-profile-container">
+    <div class="car-profile-container">
         <div class="sidebar">
             <h1 class="title has-text-white">
                 Car Models
             </h1>
 
-            <!-- <div class="players-list">
-                <a class="players-list-item" *ngFor="let roster of rosters" [routerLink]="['/profiles', roster._id]">
+            <div class="cars-list">
+                <a class="cars-list-item has-text-white" *ngFor="let car of cars">
+                    <!-- [routerLink]="['/profiles', roster._id]"> -->
                     <p>
-                        Rank: #{{roster.teamRankOverall}} {{roster.name.first}} {{roster.name.last}}
+                        {{car.modelYear}} {{car.carName}}
                     </p>
                 </a>
-            </div> -->
+            </div>
 
             <div class="field is-grouped">
                 <p class="button-location">
-                    <a class="button is-white is-large" routerLink="/">
+                    <a class="button is-white is-medium" routerLink="/">
                         Main Menu
                     </a>
-                    <a class="button is-success is-medium" routerLink="/">
+                    <a class="button is-success is-normal" routerLink="/">
                         Create Car Profile
                     </a>
                 </p>
             </div>
         </div>
 
-        <div class="player-profile">
+        <div class="car-profile">
             <h1 class="title has-text-white">
                 Car Profile
             </h1>

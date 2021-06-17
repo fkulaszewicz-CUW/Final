@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { WelcomeScreenComponent } from './pages/welcome-screen/welcome-screen.component';
 import { CarProfileComponent } from './pages/car-profile/car-profile.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +16,10 @@ import { CarProfileComponent } from './pages/car-profile/car-profile.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
