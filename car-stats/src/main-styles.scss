@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700');
+
+$gray: #95999D;
+$darkRed: #700000;
+$deepBlue: #000b4b; 
+$black:#000000;
+$white: #ffffff;
+
+
+$family-sans-serif: "Nunito", sans-serif;
+$primary: $gray;
+$link: $black;
+
+
+// Update some of Bulma's component variables
+
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+
+// Set custom global styles (will be applied to whole app)
+
+html {
+    background: linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%);
+    background-size: 100px 100px;
+    background-position: 0 0, 0 50px, 50px -50px, -50px 0px;
+}
+
+html, body {
+    height: 100%;
+}
