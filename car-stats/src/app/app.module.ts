@@ -7,12 +7,16 @@ import { WelcomeScreenComponent } from './pages/welcome-screen/welcome-screen.co
 import { CarProfileComponent } from './pages/car-profile/car-profile.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CreateCarProfileComponent } from './pages/create-car-profile/create-car-profile.component';
+import { UpdateCarProfileComponent } from './pages/update-car-profile/update-car-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeScreenComponent,
-    CarProfileComponent
+    CarProfileComponent,
+    CreateCarProfileComponent,
+    UpdateCarProfileComponent
   ],
   imports: [
     BrowserModule,

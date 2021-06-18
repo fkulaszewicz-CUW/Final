@@ -19,4 +19,19 @@ router.route('/carProfile/byID/:car_id')
     .put(carController.updateCarProfile)
     .delete(carController.delete)
 
+router.route('/fastestCars')
+    .get(carController.getFastestCars)
+
+router.route('/mostHP')
+    .get(carController.getMostHP)
+
+router.route('/topSpeed')
+    .get(carController.getTopSpeed)
+
+router.route('/carPrice')
+    .get(carController.getPrice)
+
+router.route('/lapTime')
+    .get(carController.getLapTime)
+
 module.exports = router;

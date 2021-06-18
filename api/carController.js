@@ -91,3 +91,78 @@ exports.delete = function (req, res) {
         });
     });
 };
+
+exports.getFastestCars = function (req, res) {
+    Car.getFastestCars(function (err, car) {
+        if (err)
+            res.json({
+                status: "error",
+                message: err
+            });
+        res.json({
+            status: "success",
+            message: "Got Fastest Cars Successfully!",
+            data: car
+        });
+    });
+};
+
+exports.getMostHP = function (req, res) {
+    Car.getMostHP(function (err, car) {
+        if (err)
+            res.json({
+                status: "error",
+                message: err
+            });
+        res.json({
+            status: "success",
+            message: "Got Most HP Cars Successfully!",
+            data: car
+        });
+    });
+};
+
+exports.getTopSpeed = function (req, res) {
+    Car.getTopSpeed(function (err, car) {
+        if (err)
+            res.json({
+                status: "error",
+                message: err
+            });
+        res.json({
+            status: "success",
+            message: "Got Most Top Speed Successfully!",
+            data: car
+        });
+    });
+};
+
+exports.getPrice = function (req, res) {
+    Car.getPrice(function (err, car) {
+        if (err)
+            res.json({
+                status: "error",
+                message: err
+            });
+        res.json({
+            status: "success",
+            message: "Got Car Price Successfully!",
+            data: car
+        });
+    });
+};
+
+exports.getLapTime = function (req, res) {
+    Car.getLapTime(function (err, car) {
+        if (err)
+            res.json({
+                status: "error",
+                message: err
+            });
+        res.json({
+            status: "success",
+            message: "Got Lap Times Successfully!",
+            data: car
+        });
+    });
+};

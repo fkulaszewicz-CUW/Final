@@ -53,3 +53,23 @@ var Car = module.exports = mongoose.model('carsProfile', carSchema, 'car_model_s
 module.exports.getFullProfile = function (callback, limit) {
     Car.find(callback).limit(limit);
 }
+
+module.exports.getFastestCars = function (callback, limit) {
+    Car.find(callback).find().sort({ "zeroToSixty": 1 });
+}
+
+module.exports.getMostHP = function (callback, limit) {
+    Car.find(callback).find().sort({ "HP": -1 });
+}
+
+module.exports.getTopSpeed = function (callback, limit) {
+    Car.find(callback).find().sort({ "topSpeedMPH": -1 });
+}
+
+module.exports.getPrice = function (callback, limit) {
+    Car.find(callback).find().sort({ "testedCardPrice": -1 });
+}
+
+module.exports.getLapTime = function (callback, limit) {
+    Car.find(callback).find().sort({"lapTimeMinutes":1, "lapTimeSeconds":1});
+}

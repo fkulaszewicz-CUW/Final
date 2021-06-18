@@ -6,8 +6,7 @@
             </h1>
 
             <div class="cars-list">
-                <a class="cars-list-item has-text-white" *ngFor="let car of cars">
-                    <!-- [routerLink]="['/profiles', roster._id]"> -->
+                <a class="cars-list-item has-text-white" *ngFor="let car of cars" [routerLink]="['/profiles', car._id]">
                     <p>
                         {{car.modelYear}} {{car.carName}}
                     </p>
@@ -19,7 +18,7 @@
                     <a class="button is-white is-medium" routerLink="/">
                         Main Menu
                     </a>
-                    <a class="button is-success is-normal" routerLink="/">
+                    <a class="button is-success is-normal" routerLink="/create-car-profile">
                         Create Car Profile
                     </a>
                 </p>
@@ -30,83 +29,76 @@
             <h1 class="title has-text-white">
                 Car Profile
             </h1>
-            <!-- <div class="view-profile-container" *ngIf="profiles">
-                <div class="line-one has-text-weight-bold">
-                    #{{profiles.uniformNumber}} {{profiles.name.first}} {{profiles.name.last}}
+            <div class="view-profile-container" *ngIf="profiles">
+                <div class="line-one has-text-weight-bold is-size-3">
+                    {{profiles.modelYear}} {{profiles.carName}}
                 </div>
-                <div class="line-config">
+                <div class="line-config has-text-white">
                     <p>
-                        Team Rank: #{{profiles.teamRankOverall}} &nbsp;||&nbsp; Position: {{profiles.position}}
-                        &nbsp;||&nbsp; Points PG: {{profiles.fieldGoalsOverall.pointsPerGame}} &nbsp;||&nbsp; Exp:
-                        {{profiles.experience}}
-                        Years
+                        &nbsp;&nbsp; Lap Time: {{profiles.lapTimeMinutes}} Minutes / {{profiles.lapTimeSeconds}} Seconds
                     </p>
                 </div>
-                <div class="line-config">
+                <div class="line-config has-text-white">
                     <p>
-                        Birth Date: {{profiles.birth}} &nbsp;||&nbsp; Age: {{profiles.age}} &nbsp;||&nbsp; Height:
-                        {{profiles.characteristics.height}} &nbsp;||&nbsp;
-                        Weight: {{profiles.characteristics.weight}}
+                        &nbsp;&nbsp; Zero To Sixty: {{profiles.zeroToSixty}} Seconds
                     </p>
                 </div>
-                <div class="line-config">
+                <div class="line-config has-text-white">
                     <p>
-                        Games - Played: {{profiles.games.played}} &nbsp;||&nbsp; Started: {{profiles.games.started}}
-                        &nbsp;||&nbsp; Minutes Per Game: {{profiles.games.minutesPerGame}}
+                        &nbsp;&nbsp; Price of Tested Car: {{profiles.testedCardPrice}}$
                     </p>
                 </div>
-                <div class="line-config">
+                <div class="line-config has-text-white">
                     <p>
-                        Overall Field Goals - Made: {{profiles.fieldGoalsOverall.goalsMade}} &nbsp;||&nbsp; Attempts:
-                        {{profiles.fieldGoalsOverall.goalAttempts}} &nbsp;||&nbsp; Avg:
-                        {{profiles.fieldGoalsOverall.goalPercentage}}
+                        &nbsp;&nbsp; Top Speed: {{profiles.topSpeedMPH}} mph &nbsp;--&nbsp; Horsepower: {{profiles.HP}}
+                        hp
                     </p>
                 </div>
-                <div class="line-config">
+                <div class="line-config has-text-white">
                     <p>
-                        Overall 2-pt Goals - Made: {{profiles.fieldTwo.twoPointMade}} &nbsp;||&nbsp; Attempts:
-                        {{profiles.fieldTwo.twoPointAttempts}} &nbsp;||&nbsp; Avg:
-                        {{profiles.fieldTwo.twoPointPercentage}}
+                        &nbsp;&nbsp; Car Weight: {{profiles.weightLB}} lbs &nbsp;--&nbsp; Ratio: {{profiles.LBPerHP}}
+                        lb/hp
                     </p>
                 </div>
-                <div class="line-config">
+                <div class="line-config has-text-white">
                     <p>
-                        Overall 3-pt Goals - Made: {{profiles.fieldThree.threePointMade}} &nbsp;||&nbsp; Attempts:
-                        {{profiles.fieldThree.threePointAttempts}} &nbsp;||&nbsp; Avg:
-                        {{profiles.fieldThree.threePointPercentage}}
+                        &nbsp;&nbsp; Track Tire Company Used: {{profiles.tireCompanyUsed}}
                     </p>
                 </div>
-                <div class="line-config">
-                    <p>
-                        Overall Free Points - Made: {{profiles.freeThrow.freePointMade}} &nbsp;||&nbsp; Attempts:
-                        {{profiles.freeThrow.freePointAttempts}} &nbsp;||&nbsp; Avg:
-                        {{profiles.freeThrow.freePointPercentage}}
-                    </p>
-                </div>
-                <div class="line-config">
-                    <p>
-                        Rebounds - Offense: {{profiles.floor.rebounds.offense}} &nbsp;||&nbsp; Defense:
-                        {{profiles.floor.rebounds.defense}} &nbsp;||&nbsp; Total PG:
-                        {{profiles.floor.rebounds.totalPerGame}}
-                    </p>
-                </div>
-                <div class="line-config">
-                    <p>
-                        Assists: {{profiles.floor.assists}} &nbsp;||&nbsp; Steals: {{profiles.floor.steals}}
-                        &nbsp;||&nbsp; Blocks: {{profiles.floor.blocks}} &nbsp;||&nbsp; Turnovers:
-                        {{profiles.floor.turnovers}}
-                        &nbsp;||&nbsp; Fouls: {{profiles.floor.fouls}}
-                    </p>
-                </div>
+
                 <div class="update-delete-button">
-                    <a class="button is-success" [routerLink]="['/update-profile', selectedProfileId]">
-                        Update Player Profile
+                    <a class="button is-success is-medium" [routerLink]="['/update-profile', selectedProfileId]">
+                        Update Car Profile
                     </a>
-                    <a class="button is-danger" (click)="onDeleteProfileClick()">
-                        Delete Player Profile
+                    <a class="button is-danger is-normal" (click)="onDeleteProfileClick()">
+                        Delete Car Profile
                     </a>
                 </div>
-            </div> -->
+            </div>
+            <div class="field is-horizontal">
+                <a class="rank has-text-white is-size-5">
+                    Rank Cars By:
+                </a>
+                <div class="field is-grouped">
+                    <p class="button-location">
+                        <a class="button is-white is-normal" routerLink="/">
+                            Fastest 0-60
+                        </a>
+                        <a class="button is-success is-normal" routerLink="/">
+                            Horsepower
+                        </a>
+                        <a class="button is-white is-normal" routerLink="/">
+                            Top Speed
+                        </a>
+                        <a class="button is-success is-normal" routerLink="/">
+                            Price
+                        </a>
+                        <a class="button is-white is-normal" routerLink="/">
+                            Lap Time
+                        </a>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,126 @@
+<div class="centered-box">
+    <div class="create-car-profile-container">
+        <div class="car-profile">
+            <h1 class="title has-text-black">
+                Create Car Profile
+            </h1>
+            <p class="help is-size-5" *ngIf="message">
+                All fields are required when creating a new profile!
+            </p>
+            <p class="help is-size-5" *ngIf="success">
+                {{success}}
+            </p>
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input #carName class="input" type="text" placeholder="Car Name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input #tireCompanyUsed class="input" type="text" placeholder="Tire Company Used">
+                        </div>
+                    </div>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input #topSpeedMPH class="input" type="text" placeholder="Top Speed (MPH)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input #zeroToSixty class="input" type="text" placeholder="Zero To Sixty">
+                        </div>
+                    </div>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input #modelYear class="input" type="text" placeholder="Model Year">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input #lapTimeMinutes class="input" type="text" placeholder="Lap Time Minutes">
+                        </div>
+                    </div>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input #lapTimeSeconds class="input" type="text" placeholder="Lap Time Seconds">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input #testedCardPrice class="input" type="text" placeholder="Tested Car Price">
+                        </div>
+                    </div>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input #HP class="input" type="text" placeholder="Horsepower">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input #weightLB class="input" type="text" placeholder="Weight (LBS)">
+                        </div>
+                    </div>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input #LBPerHP class="input" type="text" placeholder="Ratio LBS/HP">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <p class="control-button">
+                    <a class="button is-light" routerLink="/car-profile">
+                        Home/Done
+                    </a>
+                </p>
+                <p class="control-button">
+                    <a class="button is-success is-medium" (click)="createCarProfile(
+                        carName.value, tireCompanyUsed.value, topSpeedMPH.value, zeroToSixty.value,
+                        modelYear.value, lapTimeMinutes.value, lapTimeSeconds.value, testedCardPrice.value,
+                        HP.value, weightLB.value, LBPerHP.value
+                    )" *ngIf="show">
+                        Create
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
