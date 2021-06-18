@@ -6,7 +6,7 @@
             </h1>
 
             <div class="cars-list">
-                <a class="cars-list-item has-text-white" *ngFor="let car of cars" [routerLink]="['/profiles', car._id]">
+                <a class="cars-list-item has-text-white" *ngFor="let car of cars" [routerLink]="['/mostHP', car._id]">
                     <p>
                         {{car.modelYear}} {{car.carName}}
                     </p>
@@ -15,11 +15,8 @@
 
             <div class="field is-grouped">
                 <p class="button-location">
-                    <a class="button is-white is-medium" routerLink="/">
-                        Main Menu
-                    </a>
-                    <a class="button is-success is-normal" routerLink="/create-car-profile">
-                        Create Car Profile
+                    <a class="button is-white is-medium" routerLink="/car-profile">
+                        Back
                     </a>
                 </p>
             </div>
@@ -27,7 +24,12 @@
 
         <div class="car-profile">
             <h1 class="title has-text-white">
-                Car Profile
+                <p>
+                    This ranks the car model's Horsepower
+                </p>
+                <p>
+                    in descending order.
+                </p>
             </h1>
             <div class="view-profile-container" *ngIf="profiles">
                 <div class="line-one has-text-weight-bold is-size-3">
@@ -66,38 +68,6 @@
                     </p>
                 </div>
 
-                <div class="update-delete-button">
-                    <a class="button is-success is-medium" [routerLink]="['/update-profile', selectedProfileId]">
-                        Update Car Profile
-                    </a>
-                    <a class="button is-danger is-normal" (click)="onDeleteProfileClick()">
-                        Delete Car Profile
-                    </a>
-                </div>
-            </div>
-            <div class="field is-horizontal">
-                <a class="rank has-text-white is-size-5">
-                    Rank Cars By:
-                </a>
-                <div class="field is-grouped">
-                    <p class="button-location">
-                        <a class="button is-white is-normal" routerLink="/fastestCars">
-                            Fastest 0-60
-                        </a>
-                        <a class="button is-success is-normal" routerLink="/mostHP">
-                            Horsepower
-                        </a>
-                        <a class="button is-white is-normal" routerLink="/topSpeed">
-                            Top Speed
-                        </a>
-                        <a class="button is-success is-normal" routerLink="/carPrice">
-                            Price
-                        </a>
-                        <a class="button is-white is-normal" routerLink="/lapTime">
-                            Lap Time
-                        </a>
-                    </p>
-                </div>
             </div>
         </div>
     </div>

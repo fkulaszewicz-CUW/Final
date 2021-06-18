@@ -36,4 +36,24 @@ export class CarDataService {
     return this.webReqService.delete(`database/carProfile/byID/${id}`);
   }
 
+  getFastestCars() {
+    return this.webReqService.get('database/fastestCars');
+  }
+
+  getMostHP() {
+    return this.webReqService.get('database/mostHP');
+  }
+
+  getTopSpeed() {
+    return this.webReqService.get('database/topSpeed');
+  }
+
+  getCarPrice() {
+    return this.webReqService.get('database/carPrice');
+  }
+
+  getLapTime() {
+    return this.webReqService.get('database/lapTime');
+  }
+
 }
